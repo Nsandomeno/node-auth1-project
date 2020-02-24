@@ -20,7 +20,7 @@ router.post('/register', (req, res) => {
     // helper method
     Users.add(user)
         .then((newUser) => {
-            res.status(201).json(newUser)
+            res.status(201).json({message:"Registered!"})
         })
         .catch((error) => {
             res.status(500).json({ message:"Error" })
@@ -34,7 +34,7 @@ router.post('/login', (req, res) => {
         .first()
         .then((user) => {
             if (user && bcrypt.compareSync(password, user.password)) {
-                res.status(200).json({ message:`Welcome ${user.username}!` })
+                res.status(200).json({ message:"Logged In" })
             } else {
                 res.status(401).json({ message:'Invalid credentials' })
             }

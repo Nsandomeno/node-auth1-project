@@ -13,7 +13,7 @@ const restricted = require('../auth/restrict-middleware.js');
 // - auth
 router.use('/auth', authRouter)
 // - users (or something else)
-router.use('/users', restricted, userRouter) // Authentication middleware should go here!
+router.use('/restricted/users', restricted, userRouter) // Authentication middleware should go here!
 // remember, the full url now is /api/users since this is based on top of the API Router
 // begin the endpoints
 
