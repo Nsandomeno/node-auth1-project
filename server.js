@@ -1,6 +1,6 @@
 const express = require('express');
 // import the router
-const userRouter = require('./api/usersRouter.js')
+const apiRouter = require('./api/apiRouter.js')
 // import dbConfig object if there is an endpoint here
 
 // create the server
@@ -8,6 +8,6 @@ const server = express()
 // Global Middleware
 server.use(express.json())
 // Introduce your route url
-server.use('/api', userRouter)
+server.use('/api', apiRouter)
 // export the server 
 module.exports = server
